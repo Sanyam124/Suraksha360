@@ -82,3 +82,26 @@ We use Artificial Intelligence to solve two massive insurance problems:
 To keep the system fast and completely automated, Suraksha360 only covers **income lost due to external disruptions** (weather, strikes, curfews).
 * We **do not** cover vehicle repairs or petrol.
 * We **do not** cover health, accident, or life insurance.
+
+---
+
+## 6. Fighting GPS Fraud: The Market Crash Response 🚨
+
+A recent hackathon alert warned that groups of 500+ workers are using fake GPS apps to trigger false payouts during weather alerts. Simple GPS checks are no longer enough. Here is exactly how Suraksha360 stops them using AI:
+
+### 1. Spotting the Fake (Differentiation)
+A real gig worker stuck in a storm will have a phone battery draining in the cold, a weak internet signal, and small chaotic movements as they try to find shelter. A fraudster sitting at home with a fake GPS app has a perfect signal and perfectly still coordinates. Our system detects these unnatural "perfect" signals and instantly separates the scammers from the genuinely stranded workers.
+
+### 2. What Data We Check (Beyond GPS)
+To catch a massive group of 500 scammers working together, we check three simple things:
+* **The Phone's Sensors:** A fake GPS app can't fake the physical shaking of a motorcycle in a storm. If the phone is completely physically still but claims to be riding through a flooded street, we flag it.
+* **The Wi-Fi Network:** If their GPS says they are in a flooded red-zone, but their phone is connected to a fast, stable home Wi-Fi network, the claim is blocked.
+* **Group Attacks:** If 500 claims are suddenly filed at the exact same millisecond, our system knows it's an organized attack and pauses them.
+
+### 3. Protecting Honest Workers (The UX Balance)
+Sometimes, honest workers get flagged by mistake (bad weather can cause a phone to act weird!). We do not want to punish them.
+If a claim looks suspicious, we don't automatically ban the worker or cancel their money. Instead, their automatic payout is paused and they are sent a quick WhatsApp message: 
+
+*"Please reply with a photo of the flooded street to verify your claim."*
+
+This simple "Grace Verification" step ensures the honest worker still gets paid, but the scammer sitting in their living room on a fake GPS emulator cannot provide the photo.
