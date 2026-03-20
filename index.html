@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suraksha360 - DEVTrails Prototype</title>
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Modern premium font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0b1120;
+            color: #f8fafc;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.5rem;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-alt {
+            background: linear-gradient(135deg, #34d399, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .blob {
+            position: absolute;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.3;
+            animation: pulse 8s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.2; }
+            100% { transform: scale(1.1); opacity: 0.4; }
+        }
+        /* Micro-animations */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -5px rgba(56, 189, 248, 0.15);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+        .glow-line {
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.5), transparent);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen overflow-x-hidden selection:bg-blue-500/30 font-light">
+    
+    <!-- Background glowing orbs -->
+    <div class="blob bg-blue-600 w-[500px] h-[500px] rounded-full top-0 left-0"></div>
+    <div class="blob bg-purple-600 w-[500px] h-[500px] rounded-full bottom-0 right-0" style="animation-delay: -4s;"></div>
+    <div class="blob bg-emerald-600 w-[400px] h-[400px] rounded-full top-[40%] left-[30%]" style="animation-delay: -2s;"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b-0 border-x-0 border-t-0 rounded-none bg-slate-900/60 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tight flex items-center gap-2">
+                <span class="text-3xl">🛵</span> Suraksha<span class="text-gradient">360</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
+                <a href="#how-it-works" class="hover:text-blue-400 transition">Workflow</a>
+                <a href="#triggers" class="hover:text-blue-400 transition">Parametric Triggers</a>
+                <a href="#ai" class="hover:text-blue-400 transition">AI Architecture</a>
+                <a href="#pricing" class="hover:text-blue-400 transition">Weekly Plans</a>
+            </div>
+            <div class="text-sm font-bold px-4 py-1.5 rounded-full bg-blue-500 text-white shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                Phase 1 Prototype
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION & MOCKUP -->
+    <section class="max-w-6xl mx-auto px-6 pt-32 pb-24 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- Left: Value Prop -->
+            <div>
+                <div class="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-medium text-blue-300 mb-6 uppercase tracking-wider">
+                    Guidewire DEVTrails 2026 Submission
+                </div>
+                <h1 class="text-5xl md:text-6xl/tight font-extrabold mb-6 tracking-tight">
+                    When external forces stop deliveries, we protect your <br/>
+                    <span class="text-gradient">Lost Income.</span>
+                </h1>
+                <p class="text-slate-400 text-lg mb-8 leading-relaxed max-w-lg">
+                    AI-powered parametric insurance built strictly for India's food delivery workers. Zero paperwork. Zero manual claims. Instant weekly coverage against extreme weather, pollution, and curfews.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#how-it-works" class="px-8 py-3.5 bg-white text-slate-900 rounded-full font-bold shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:scale-105 transition cursor-pointer">
+                        Explore Strategy ↓
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Interactive Dashboard Mockup -->
+            <div class="glass-panel p-8 relative hover-lift mx-auto w-full max-w-md shadow-2xl shadow-blue-900/20">
+                <!-- Worker Profile Header -->
+                <div class="flex items-center gap-4 mb-8 pb-6 border-b border-slate-700/50">
+                    <img src="https://ui-avatars.com/api/?name=Raju+Kumar&background=38bdf8&color=fff" alt="Worker Avatar" class="w-14 h-14 rounded-full border-2 border-slate-700">
+                    <div>
+                        <h3 class="text-xl font-bold">Raju Kumar</h3>
+                        <p class="text-xs text-slate-400">Swiggy Delivery Partner • Mumbai</p>
+                    </div>
+                    <div class="ml-auto bg-emerald-500/10 text-emerald-400 text-[10px] uppercase tracking-wider px-2 py-1 rounded border border-emerald-500/20 font-bold flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> GPS Active
+                    </div>
+                </div>
+
+                <!-- Active Policy Status -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-end mb-2">
+                        <span class="text-slate-400 text-sm font-medium">Active Weekly Policy</span>
+                        <span class="text-gradient font-bold">Standard Plan</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-500 to-indigo-500 w-[100%] h-full relative"></div>
+                    </div>
+                    <div class="flex justify-between mt-2 text-xs font-medium text-slate-500">
+                        <span>Premium: ₹35/week</span>
+                        <span>Auto-renews: Monday</span>
+                    </div>
+                </div>
+
+                <!-- Real-Time Trigger Monitoring -->
+                <div class="space-y-3 mb-8">
+                    <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mb-3">Live API Exogenous Triggers (Mumbai)</h4>
+                    
+                    <!-- Trigger 1: Rain -->
+                    <div class="flex justify-between items-center p-3 rounded-xl bg-slate-800/40 border border-slate-700/30">
+                        <div class="flex items-center gap-3">
+                            <span class="text-lg">🌧️</span>
+                            <span class="text-sm font-medium">Rainfall Threshold</span>
+                        </div>
+                        <span class="text-xs font-mono text-slate-400">12mm / 64mm</span>
+                    </div>
+                    
+                    <!-- Trigger 3: Curfew (TRIGGERED DEMO) -->
+                    <div class="flex justify-between items-center p-3 rounded-xl bg-red-500/10 border border-red-500/40 shadow-[0_0_20px_rgba(239,68,68,0.15)] relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,1)]"></div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-lg">🚨</span>
+                            <span class="text-sm font-bold text-red-300">Red Alert: Flooding</span>
+                        </div>
+                        <span class="text-[10px] font-bold text-white bg-red-500 px-2 py-1 rounded uppercase tracking-wider animate-pulse">Claim Filing</span>
+                    </div>
+                </div>
+
+                <!-- Automated Payout Box -->
+                <div class="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-xl p-5 border border-blue-500/30 mt-4 text-center">
+                    <p class="text-xs font-bold uppercase tracking-wider text-blue-300 mb-1">AI Verified Income Loss Payout</p>
+                    <h2 class="text-4xl font-extrabold text-white mb-3">₹487.00</h2>
+                    <ul class="text-xs text-slate-400 text-left space-y-1.5 font-medium">
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Backend: Isolation Forest checks passed</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Validation: Zero GPS spoofing detected</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Action: Initiating UPI Transfer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="h-px w-full glow-line my-8"></div>
+
+    <!-- 2. ZERO TOUCH WORKFLOW SECTION -->
+    <section id="how-it-works" class="py-20 relative z-10 bg-slate-900/30">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-md font-bold text-blue-400 tracking-widest uppercase mb-2">The Process</h2>
+                <h3 class="text-3xl md:text-5xl font-bold">Zero-Touch Workflow</h3>
+                <p class="mt-4 text-slate-400 max-w-2xl mx-auto">Gig workers don't have time to file manual paper claims. Our entire backend executes autonomously.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div class="glass-panel p-6 hover-lift">
+                    <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-xl font-bold text-blue-400 mb-4 border border-blue-500/30">1</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Subscribe Weekly</h4>
+                    <p class="text-sm text-slate-400">Worker links UPI & Swiggy/Zomato ID. AI assigns a dynamic risk profile. Policy is active for 7 days.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="glass-panel p-6 hover-lift">
+                    <div class="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center text-xl font-bold text-indigo-400 mb-4 border border-indigo-500/30">2</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Live App Monitoring</h4>
+                    <p class="text-sm text-slate-400">Background cron jobs continuously ping Weather, AQI, and News APIs for severe disruptions in the zone.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="glass-panel p-6 hover-lift border-t-2 border-t-purple-500">
+                    <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-xl font-bold text-purple-400 mb-4 border border-purple-500/30">3</div>
+                    <h4 class="text-lg font-bold text-white mb-2">AI Fraud Validation</h4>
+                    <p class="text-sm text-slate-400">When an API threshold is breached, our Isolation Forest model immediately runs checks for GPS mock locations.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="glass-panel p-6 hover-lift border-t-2 border-t-emerald-500">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-xl font-bold text-emerald-400 mb-4 border border-emerald-500/30">4</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Instant UPI Payout</h4>
+                    <p class="text-sm text-slate-400">Claim is automatically generated. The payout formula calculates exactly what the worker lost that day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PARAMETRIC TRIGGERS SECTION -->
+    <section id="triggers" class="py-24 relative z-10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-md font-bold text-purple-400 tracking-widest uppercase mb-2">No Underwriters Needed</h2>
+                <h3 class="text-3xl md:text-5xl font-bold">Reliable API Triggers</h3>
+                <p class="mt-4 text-slate-400 max-w-2xl mx-auto">Payouts are mathematically executed when official datasets breach required limits. No subjective opinions.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 text-center hover-lift border-white/5">
+                    <div class="text-5xl mb-4">⛈️</div>
+                    <h4 class="text-xl font-bold mb-1">OpenWeatherMap API</h4>
+                    <p class="text-sm text-slate-400 mb-4">Heavy Rainfall & Floods</p>
+                    <div class="bg-slate-900/50 p-3 rounded-lg text-xs font-mono text-slate-300">
+                        IF (rainfall > 64mm/day) OR (IMD == 'Red Alert') { <br/><span class="text-emerald-400 mt-1 block">execute_claim();</span> }
+                    </div>
+                </div>
+                <div class="glass-panel p-8 text-center hover-lift border-white/5">
+                    <div class="text-5xl mb-4">🏭</div>
+                    <h4 class="text-xl font-bold mb-1">CPCB AQI Data</h4>
+                    <p class="text-sm text-slate-400 mb-4">Severe Air Pollution</p>
+                    <div class="bg-slate-900/50 p-3 rounded-lg text-xs font-mono text-slate-300">
+                        IF (zone_aqi > 300) AND (duration > 4h) { <br/><span class="text-emerald-400 mt-1 block">execute_claim();</span> }
+                    </div>
+                </div>
+                <div class="glass-panel p-8 text-center hover-lift border-white/5">
+                    <div class="text-5xl mb-4">🚧</div>
+                    <h4 class="text-xl font-bold mb-1">News & Traffic APIs</h4>
+                    <p class="text-sm text-slate-400 mb-4">Curfews & Local Strikes</p>
+                    <div class="bg-slate-900/50 p-3 rounded-lg text-xs font-mono text-slate-300">
+                        IF (zone == 'closed') AND (gps == 'inactive') { <br/><span class="text-emerald-400 mt-1 block">execute_claim();</span> }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="h-px w-full glow-line"></div>
+
+    <!-- 4. AI ARCHITECTURE SECTION -->
+    <section id="ai" class="py-24 relative z-10 bg-gradient-to-b from-[#0b1120] to-[#0f172a]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-md font-bold text-emerald-400 tracking-widest uppercase mb-2">Machine Learning</h2>
+                    <h3 class="text-4xl font-bold mb-6">Built for Scale and Security</h3>
+                    <p class="text-slate-400 text-lg mb-6 leading-relaxed">
+                        Insurance only works if the math checks out. We leverage Python-based AI models on the backend to dynamically protect liquidity and prevent malicious abuse.
+                    </p>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <div class="w-10 h-10 rounded bg-blue-500/20 flex items-center justify-center border border-blue-500/50 flex-shrink-0">1</div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Dynamic Risk Pricing (XGBoost)</h4>
+                                <p class="text-sm text-slate-400 mt-1">Every Sunday, the AI pulls the 7-day weather forecast. If a massive monsoon week is predicted, the risk pool adjusts the weekly premium slightly higher to ensure payouts. Safe-zone workers get discounts.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="w-10 h-10 rounded bg-red-500/20 flex items-center justify-center border border-red-500/50 flex-shrink-0">2</div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Fraud Catching (Isolation Forest)</h4>
+                                <p class="text-sm text-slate-400 mt-1">If a worker attempts to use a "Mock Location" GPS app to spoof their coordinates into a flooded zone, the Isolation Forest model detects the inactivity anomaly and automatically flags the claim.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Visual AI abstract graphic -->
+                <div class="glass-panel p-8 text-center flex flex-col justify-center border-emerald-500/20 bg-emerald-900/10">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Decision_Tree.jpg/500px-Decision_Tree.jpg" alt="AI abstract" class="rounded-xl opacity-30 mix-blend-screen mb-6 grayscale" />
+                    <code class="text-left text-xs text-emerald-400 block p-4 bg-black/40 rounded-lg shadow-inner overflow-hidden">
+                        def calculate_premium(worker_id):<br/>
+                        &nbsp;&nbsp;forecast = get_weather_7d()<br/>
+                        &nbsp;&nbsp;risk_score = xgboost.predict(forecast)<br/>
+                        &nbsp;&nbsp;return max(BASE_PREMIUM, BASE_PREMIUM * risk_score)
+                    </code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PRICING SECTION -->
+    <section id="pricing" class="py-24 relative z-10 pb-32">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-md font-bold text-slate-400 tracking-widest uppercase mb-2">Aligning with the Gig Economy</h2>
+                <h3 class="text-3xl md:text-5xl font-bold">The Weekly Model</h3>
+                <p class="mt-4 text-slate-400 max-w-2xl mx-auto">Gig workers get paid every Tuesday. They live week-to-week. Therefore, our model runs exclusively on micro-subscriptions auto-renewing every Monday.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="glass-panel p-8 border-white/5 hover-lift">
+                    <h4 class="text-lg font-bold text-slate-300 mb-2">Basic</h4>
+                    <div class="text-4xl font-extrabold text-white mb-2">₹19<span class="text-lg font-medium text-slate-500">/week</span></div>
+                    <p class="text-sm text-slate-400 mb-6">Maximum Weekly Payout: ₹500</p>
+                    <ul class="text-sm text-slate-300 space-y-3 mb-8">
+                        <li>✅ Rain Coverage</li>
+                        <li>✅ Extreme Heat Coverage</li>
+                        <li class="text-slate-600">❌ Pollution / AQI</li>
+                        <li class="text-slate-600">❌ Strike / Curfew</li>
+                    </ul>
+                    <button class="w-full py-2.5 rounded bg-slate-800 text-white font-medium hover:bg-slate-700 transition">Selected Plan</button>
+                </div>
+
+                <!-- Highlighted Plan -->
+                <div class="glass-panel p-8 border-blue-500/50 bg-blue-900/10 relative transform scale-105 shadow-2xl shadow-blue-900/20">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
+                    <h4 class="text-lg font-bold text-blue-300 mb-2">Standard</h4>
+                    <div class="text-4xl font-extrabold text-white mb-2">₹35<span class="text-lg font-medium text-slate-500">/week</span></div>
+                    <p class="text-sm text-slate-400 mb-6">Maximum Weekly Payout: ₹1,000</p>
+                    <ul class="text-sm text-slate-300 space-y-3 mb-8">
+                        <li>✅ Rain Coverage</li>
+                        <li>✅ Extreme Heat Coverage</li>
+                        <li>✅ Pollution (AQI > 300)</li>
+                        <li>✅ Curfews & Strikes</li>
+                    </ul>
+                    <button class="w-full py-2.5 rounded bg-blue-500 text-white font-bold hover:bg-blue-600 shadow-lg shadow-blue-500/25 transition">Phase 2 Choice</button>
+                </div>
+
+                <div class="glass-panel p-8 border-white/5 hover-lift">
+                    <h4 class="text-lg font-bold text-purple-300 mb-2">Pro</h4>
+                    <div class="text-4xl font-extrabold text-white mb-2">₹55<span class="text-lg font-medium text-slate-500">/week</span></div>
+                    <p class="text-sm text-slate-400 mb-6">Maximum Weekly Payout: ₹1,800</p>
+                    <ul class="text-sm text-slate-300 space-y-3 mb-8">
+                        <li>✅ All Coverage Options</li>
+                        <li>✅ Priority AI Processing</li>
+                        <li>✅ 14-hour extended zone timing</li>
+                        <li>✅ Discounted base fee</li>
+                    </ul>
+                    <button class="w-full py-2.5 rounded bg-slate-800 text-white font-medium hover:bg-slate-700 transition">Selected Plan</button>
+                </div>
+            </div>
+            <p class="text-center mt-12 text-sm text-slate-500 max-w-2xl mx-auto border border-slate-800 p-4 rounded-xl bg-slate-900/50">
+                <strong class="text-white">Note for Judges:</strong> As per the Phase 1 constraints, Suraksha360 strictly restricts coverage solely to <u>Loss of Income</u>. We completely exclude health, life, accidents, or vehicle repair liability to ensure instant, automated parametric computation.
+            </p>
+        </div>
+    </section>
+
+    <footer class="text-center py-8 border-t border-slate-800 text-slate-500 text-sm">
+        Built for Guidewire DEVTrails 2026 Phase 1. End of Prototype.
+    </footer>
+</body>
+</html>
